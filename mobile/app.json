@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "SafeWalk",
+    "slug": "safewalk",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "SafeWalk needs your location to show safety around you."
+      }
+    },
+    "android": {
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "SafeWalk needs your location to show safety around you."
+        }
+      ],
+      "react-native-maps"
+    ]
+  }
+}
