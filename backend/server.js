@@ -20,7 +20,6 @@ const PORT = process.env.PORT || 3000;
 const rawApiKey = (process.env.GEMINI_API_KEY || "").trim();
 const hasValidGeminiKey =
   rawApiKey.length > 10 &&
-  rawApiKey !== "your_gemini_api_key_here" &&
   !rawApiKey.startsWith("your_");
 
 const genAI = hasValidGeminiKey ? new GoogleGenerativeAI(rawApiKey) : null;
