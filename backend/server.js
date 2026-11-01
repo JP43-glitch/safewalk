@@ -1,4 +1,6 @@
 // SafeWalk Backend — Express + Socket.IO + Gemini AI classification
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, ".env") });
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -23,7 +25,7 @@ const hasValidGeminiKey =
   !rawApiKey.startsWith("your_");
 
 const genAI = hasValidGeminiKey ? new GoogleGenerativeAI(rawApiKey) : null;
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
 
 const SYSTEM_INSTRUCTION = `You are a safety-comment classifier for a women's safety app in India.
 You understand English, Hindi, Punjabi and Hinglish.
